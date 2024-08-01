@@ -21,12 +21,14 @@ This guide outlines the steps to set up Supabase locally and manage database mig
 
 ## Managing Migrations
 
-1. **Create a New Migration:** To create a new migration file, run `supabase db new <migration_name>`. This will generate a new SQL file in the `supabase/migrations` directory where you can define your schema changes.
+1. **Create a New Migration:** To create a new migration file, run `supabase migration new <migration_name>`. This will generate a new SQL file in the `supabase/migrations` directory where you can define your schema changes.
 
-2. **Apply Migrations:** To apply migrations to your local database, use `supabase db commit`. This command runs all pending migrations.
+2. **Apply Migrations:** To apply migrations to your local database, use `supabase migration up`. This command runs all pending migrations.
 
-3. **Rollback Migrations:** If you need to rollback the last applied migration, you can use `supabase db reset`. Be cautious with this command as it will revert the last set of changes applied to your database.
+## Supabase Edge functions
 
-## Additional Resources
+1. **Create a new Edge function:** To create a new Edge function, run `supabase functions new <function_name>`. This will generate a new Edge function file in the `supabase/functions` directory where you can define your function logic.
 
-For more detailed information and advanced usage, refer to the official Supabase documentation on local development: [Supabase Local Development Guide](https://supabase.com/docs/guides/cli/local-development).
+2. **Run Edge functions locally:** To run Edge functions locally, use `supabase functions serve`. This command will start a local server to test your Edge functions.
+
+3. **Deploy Edge functions:** To deploy Edge functions to your Supabase project, use `supabase functions deploy`. This command will deploy your Edge functions to your Supabase project.

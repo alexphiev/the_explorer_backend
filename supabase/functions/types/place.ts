@@ -49,4 +49,8 @@ export interface Place {
   phones: string[];
   brand: Brand; // This could be further refined if the structure of brand is known
   addresses: Address[]; // Updated to use Address array
+  _geoloc: {
+    lat: number;
+    lng: number;
+  };
 }
