@@ -3,8 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.7.1";
 import algoliasearch from "https://esm.sh/algoliasearch@4.14.3";
 import { Database } from "../types/supabase.ts";
 import { Place } from "../types/place.ts";
-// import { createFetchRequester } from "@algolia/requester-fetch"; Better option
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
+import { createFetchRequester } from "npm:@algolia/requester-fetch";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -12,7 +11,9 @@ const algoliaAppId = Deno.env.get("ALGOLIA_APP_ID")!;
 const algoliaApiKey = Deno.env.get("ALGOLIA_API_KEY")!;
 
 const supabase = createClient<Database>(supabaseUrl, supabaseKey);
-const algolia = algoliasearch(algoliaAppId, algoliaApiKey);
+const algolia = algoliasearch(algoliaAppId, algoliaApiKey, {
+  requester: createFetchRequester(),
+});
 const prefix = Deno.env.get("ALGOLIA_INDEX_PREFIX") || "";
 const index = algolia.initIndex(`${prefix}_nature_places`);
 

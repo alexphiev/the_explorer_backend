@@ -6,6 +6,7 @@ This guide outlines the steps to set up Supabase locally and manage database mig
 
 - Docker: Ensure Docker is installed and running on your machine.
 - Supabase CLI: Install the Supabase CLI using Homebrew with the command `brew install supabase/tap/supabase`.
+- Add a `.env` file copying the keys from the `.env.example` file.
 
 ## Setting Up Supabase Locally
 
@@ -24,6 +25,8 @@ This guide outlines the steps to set up Supabase locally and manage database mig
 1. **Create a New Migration:** To create a new migration file, run `supabase migration new <migration_name>`. This will generate a new SQL file in the `supabase/migrations` directory where you can define your schema changes.
 
 2. **Apply Migrations:** To apply migrations to your local database, use `supabase migration up`. This command runs all pending migrations.
+
+3. **Deploy Migrations:** To deploy migrations to your Supabase project, use `supabase db push`. This command will deploy your migrations to your Supabase project.
 
 ## Supabase Edge functions
 
