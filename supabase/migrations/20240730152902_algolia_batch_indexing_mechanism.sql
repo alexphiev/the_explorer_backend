@@ -47,7 +47,7 @@ SELECT
     SELECT
       net.http_post(
         url := 'https://davnanxnnkphlniazuwp.supabase.co/functions/v1/process_algolia_index_queue',
-        headers:='{"Content-Type": "application/json", "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhdm5hbnhubmtwaGxuaWF6dXdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0NzA2OTAsImV4cCI6MjAzNjA0NjY5MH0.6gSEDsDYNHqWNEivPM0xT4LHsAL3XEdbKZWDUooRcgQ"}'::jsonb,
+        headers:='{"Content-Type": "application/json", "Authorization": "Bearer <ANON KEY>"}'::jsonb,
         body:=concat('{"time": "', now(), '"}')::jsonb
       ) as request_id;
 $$
